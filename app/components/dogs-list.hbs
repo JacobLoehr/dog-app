@@ -1,0 +1,9 @@
+<h2>{{@title}}</h2>
+
+<ul>
+  {{#each @dogs as |dog|}}
+    <li>
+        <button type="button"{{on 'click' (fn this.showDog dog)}}>{{dog}}</button>
+    </li>
+  {{/each}}
+</ul>

@@ -1,0 +1,14 @@
+<div class="jumbo">
+  <div class="right doggy"></div>
+  <h2>Welcome to Dogville!</h2>
+  <p>Take a look at all the amazing dogs!</p>
+</div>
+
+<h1>{{@model.name}}</h1>
+<div class="dog">
+  <ul class="results">
+    {{#each @model as |dog|}}
+      <li><Dog @dog={{dog}} /></li>
+    {{/each}}
+  </ul>
+</div>
