@@ -15,10 +15,20 @@
       <span>Description:</span> {{@dog.description}}
     </div>
     <div class="detail bedrooms">
-      <span>Meals:</span> {{@dog.meals}}
+      <span>Meals:</span>
+      <ul>
+        <li><span>Breakfast:</span> {{@dog.meals.breakfast}}</li>
+        <li><span>Dinner:</span> {{@dog.meals.dinner}}</li>
+      </ul>
+      
     </div>
     <div class="detail bedrooms">
-      <span>Activities:</span> {{@dog.activies}}
+      <span>Activities:</span>
+      <ul>
+        {{#each @dog.activities as |activity|}}
+          <li>{{activity}}</li>
+        {{/each}}
+      </ul>
     </div>
   </div>
 </article>
