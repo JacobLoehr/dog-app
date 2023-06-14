@@ -13,6 +13,6 @@ export default class IndexRoute extends Route {
       this.store.createRecord('dog', dog)
     }
     */
-    return response.data;
+    return dogs;
 }
 }
