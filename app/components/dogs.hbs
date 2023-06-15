@@ -6,7 +6,7 @@
   <ul class="results">
     <Dogs::Filter @dogs={{@dogs}} @query={{this.query}} as |results|>
       {{#each results as |dog|}}
-        <li><Dog @dog={{dog}} /></li>
+        <li><Dog @dog={{dog}} /> <button type="submit" {{on "click" (fn this.deleteDog dog)}}>Delete Dog</button></li>
       {{/each}}
     </Dogs::Filter>
   </ul>
