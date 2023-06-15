@@ -3,9 +3,14 @@
     <h3>{{@dog.name}}</h3>
     <div class="detail type">
       <span>Breed:</span> {{@dog.breed}}
+      
     </div>
     <div class="detail owner">
       <span>Owner:</span> {{@dog.owner}}
+      <label>
+        <span>Edit</span>
+        <Input @value={{this.query}} class="light" />
+      </label>
     </div>  
     
     <div class="detail location">

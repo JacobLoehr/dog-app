@@ -1,0 +1,10 @@
+<button {{action (action "toggleModal")}}>Toggle Modal</button>
+    {{#if isShowingModal}}
+    {{#modal-dialog
+        onClose=(action "toggleModal")
+        targetAttachment="center"
+        translucentOverlay=true
+    }}
+        Oh hai there!
+    {{/modal-dialog}}
+    {{/if}}
