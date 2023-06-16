@@ -1,8 +1,14 @@
-<div class="jumbo">
-  <div class="right doggy"></div>
-  <h2>Welcome to Dogville!</h2>
-  <p>Take a look at all the amazing dogs!</p>
+
+
+<div class="row">  
+  <div class="col-md-8 offset-md-2 text-center"> 
+    <h2 class="display-1">Welcome to Dogville!</h2>
+    <p class="lead">Take a look at all the amazing dogs!</p>
+  </div>
 </div>
-<AddDog @dogs={{@dogs}} />
+<div class="right doggy"></div>
+
+
+
 <h1>{{@model.name}}</h1>
 <Dogs @dogs={{@model}} />

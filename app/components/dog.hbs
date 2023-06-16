@@ -12,8 +12,9 @@
         {{activity}},
       {{/each}}
     </p>
-    <EditDog @dog={{this.dog}} />
-    <BsButton type="primary" @onClick={{(fn this.delete)}}>Delete</BsButton> 
+    <div class="buttons">
+      <EditDog @dog={{this.dog}} />
+      <BsButton type="primary" @onClick={{(fn this.delete)}}>Delete Dog</BsButton> 
+    </div>
   </div>
 </div>
-

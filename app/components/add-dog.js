@@ -12,7 +12,8 @@ export default class AddDogComponent extends Component {
   owner = '';
   size = '';
   description = '';
-  meals = '';
+  breakfast = '';
+  dinner = '';
   activities = '';
 
   @action
@@ -37,10 +38,26 @@ export default class AddDogComponent extends Component {
         breakfast: this.breakfast,
         dinner: this.dinner
       },
-      activities: this.activities
+      activities: this.activities.split(',')
     })
     this.showModal = false
+  
+    this.name = '';
+    this.breed = '';
+    this.owner = '';
+    this.size = '';
+    this.description = '';
+    this.breakfast = '';
+    this.dinner = '';
+    this.activities = '';
   }
 
+  @action
+  addActivity() {
+  }
+
+  @action
+  removeActivity() {
+  }
 
 }

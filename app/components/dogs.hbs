@@ -1,21 +1,23 @@
+<br />
+<br />	
+<AddDog @dogs={{@dogs}} />
+<div class="input-group" id="adv-search">
+    <Input @value={{this.query}} type="text" class="form-control" placeholder="Search for dogs" />     
+</div>
 
-<br />
-<br />
-<label class="search">
-    <span>What dog are you looking for?</span>
-    <Input @value={{this.query}} class="light" />
-  </label>
 <div class="dog">
-  
   <ul class="results">
+    <div class="row"> 
     <Dogs::Sort @dogs={{@dogs}} as |sorted|>
       <Dogs::Filter @dogs={{sorted}} @query={{this.query}} as |results|>
         {{#each results as |dog|}}
-        <li>
-          <Dog @dog={{dog}} />       
-        </li>
+        <div class="col-4">
+                <Dog @dog={{dog}} />
+                <br/><br/><br/>
+        </div>
         {{/each}}
       </Dogs::Filter>
     </Dogs::Sort>
+    </div>
   </ul>
 </div>

@@ -4,7 +4,6 @@
     <modal.header>
         <h4 class="modal-title">
             Edit Dog Properties
-            <div class="badge bg-primary">2</div>
         </h4>
     </modal.header>
     <modal.body>
@@ -13,20 +12,15 @@
             <form.element @controlType="breed" @label="Breed:" @property="breed" />
             <form.element @controlType="owner" @label="Owner:" @property="owner" />
             <form.element @controlType="size" @label="Size:" @property="size" />
-            <form.element @controlType="description" @label="Description:" @property="description" />
-            
-            <form.element @controlType="meals" @label="Meals:" @helpText="(Breakfast)" @property="breakfast" />       
-            <form.element @controlType="meals" @helpText="(Dinner)" @property="dinner" />
-
-            <form.element @controlType="activities" @label="Activites:" @property="activities" />
-            <button {{action "addActivity"}}class="btn btn-secondary">Add Activity</button>
-            <button {{action "removeActivity"}}class="btn btn-secondary">Remove Activity</button>
+            <form.element @controlType="description" @label="Description:" @property="description" />          
+            <form.element @controlType="meals" @label="Meals:" @helpText="Breakfast" @property="breakfast" />       
+            <form.element @controlType="meals" @helpText="Dinner" @property="dinner" />
+            <form.element @controlType="activities" @label="Activites:" @helpText="Please seperate each activity with a comma" @property="activities" />
             <br />
             <br />
             <br />
             <form.submitButton @onClick={{this.save}}>Submit</form.submitButton>
         </BsForm>
     </modal.body>
-    
     </BsModal>
 </div>

@@ -12,9 +12,17 @@ export default class EditDogComponent extends Component {
   owner = this.args.dog.owner
   size = this.args.dog.size
   description = this.args.dog.description
-  breakfast = this.args.dog.breakfast
-  dinner = this.args.dog.dinner
-  activities = this.args.dog.activities
+  breakfast = this.args.dog.meals.breakfast
+  dinner = this.args.dog.meals.dinner
+  _activities = this.args.dog.activities
+
+  set activities(newActivities) {
+    this._activities = newActivities.split(',')
+  }
+
+  get activities() {
+    return this._activities
+  }
 
   @action
   openModal() {
@@ -39,7 +47,7 @@ export default class EditDogComponent extends Component {
         breakfast: this.breakfast,
         dinner: this.dinner
       },
-      activities: this.activities
+      activities: this._activities
     })
   
     this.args.dog.destroyRecord()
