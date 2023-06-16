@@ -1,18 +1,14 @@
+<br />
+<br />
 <article class="dog">
   <div class="details">
     <h3>{{@dog.name}}</h3>
     <div class="detail type">
-      <span>Breed:</span> {{@dog.breed}}
-      
+      <span>Breed:</span> {{@dog.breed}}     
     </div>
     <div class="detail owner">
       <span>Owner:</span> {{@dog.owner}}
-      <label>
-        <span>Edit</span>
-        <Input @value={{this.query}} class="light" />
-      </label>
-    </div>  
-    
+    </div>      
     <div class="detail location">
       <span>Size:</span> {{@dog.size}}
     </div>
@@ -24,8 +20,7 @@
       <ul>
         <li><span>Breakfast:</span> {{@dog.meals.breakfast}}</li>
         <li><span>Dinner:</span> {{@dog.meals.dinner}}</li>
-      </ul>
-      
+      </ul>    
     </div>
     <div class="detail bedrooms">
       <span>Activities:</span>

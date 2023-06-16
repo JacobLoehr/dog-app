@@ -12,7 +12,8 @@ export default class EditDogComponent extends Component {
   owner = this.args.dog.owner
   size = this.args.dog.size
   description = this.args.dog.description
-  meals = this.args.dog.meals
+  breakfast = this.args.dog.breakfast
+  dinner = this.args.dog.dinner
   activities = this.args.dog.activities
 
   @action
@@ -35,14 +36,11 @@ export default class EditDogComponent extends Component {
       size: this.size,
       description: this.description,
       meals: {
-        breakfast: "acorns",
-        dinner: "kibble"
+        breakfast: this.breakfast,
+        dinner: this.dinner
       },
       activities: this.activities
     })
-
-
-    console.log(newDog)
   
     this.args.dog.destroyRecord()
   }

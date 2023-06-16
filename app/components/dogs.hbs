@@ -9,8 +9,8 @@
         {{#each results as |dog|}}
         <li>
           <Dog @dog={{dog}} />
-          <button type="submit" {{on "click" (fn this.deleteDog dog)}}>Delete Dog</button>
-          <Editdog @dog={{dog}} />
+          <EditDog @dog={{dog}} />
+          <BsButton type="danger" @onClick={{(fn this.deleteDog dog)}}>Delete Dog</BsButton>  
         </li>
         {{/each}}
       </Dogs::Filter>

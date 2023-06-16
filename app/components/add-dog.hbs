@@ -1,0 +1,27 @@
+
+
+<div>
+    <button {{action "openModal"}} class="btn btn-primary">Add Dog</button>
+    <BsModal @open={{this.showModal}} @onSubmit={{this.submit}} @onHidden={{fn (mut this.modal3) false}} as |modal|>
+    <modal.header>
+        <h4 class="modal-title">
+            Add Dog Properties
+            <div class="badge bg-primary">2</div>
+        </h4>
+    </modal.header>
+    <modal.body>
+        <BsForm @model={{this}} @onSubmit={{this.submit}} as |form|>
+            <form.element @controlType="name" @label="Name:" @property="name" />
+            <form.element @controlType="breed" @label="Breed:" @property="breed" />
+            <form.element @controlType="owner" @label="Owner:" @property="owner" />
+            <form.element @controlType="size" @label="Size:" @property="size" />
+            <form.element @controlType="description" @label="Description:" @property="description" />
+            <form.element @controlType="meals" @label="Meals:" @helpText="(Breakfast)" @property="breakfast" />       
+            <form.element @controlType="meals" @helpText="(Dinner)" @property="dinner" />
+            <form.element @controlType="activities" @label="Activites:" @property="activities" />
+            <form.submitButton @onClick={{this.save}}>Submit</form.submitButton>
+        </BsForm>
+    </modal.body>
+    
+    </BsModal>
+</div>
