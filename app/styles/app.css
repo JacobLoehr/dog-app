@@ -30,9 +30,14 @@ button {
 .btn{
   float: left;
   margin-right: 10px;
+  margin-left: 50px;
 }
 .btn-secondary{
   float: right;
+}
+
+.search{
+  margin-left: 100px;
 }
 
 body {

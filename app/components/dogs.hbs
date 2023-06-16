@@ -1,8 +1,12 @@
-<div class="dog">
-  <label>
+
+<br />
+<br />
+<label class="search">
     <span>What dog are you looking for?</span>
     <Input @value={{this.query}} class="light" />
   </label>
+<div class="dog">
+  
   <ul class="results">
     <Dogs::Sort @dogs={{@dogs}} as |sorted|>
       <Dogs::Filter @dogs={{sorted}} @query={{this.query}} as |results|>
