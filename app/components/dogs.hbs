@@ -10,7 +10,7 @@
         <li>
           <Dog @dog={{dog}} />
           <EditDog @dog={{dog}} />
-          <BsButton type="danger" @onClick={{(fn this.deleteDog dog)}}>Delete Dog</BsButton>  
+          <BsButton type="primary" @onClick={{(fn this.deleteDog dog)}}>Delete Dog</BsButton>  
         </li>
         {{/each}}
       </Dogs::Filter>

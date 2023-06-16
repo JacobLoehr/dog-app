@@ -10,7 +10,7 @@
         </h4>
     </modal.header>
     <modal.body>
-        <BsForm @model={{this}} @onSubmit={{this.submit}} as |form|>
+        <BsForm @formLayout="horizontal" @model={{this}} @onSubmit={{this.submit}} as |form|>
             <form.element @controlType="name" @label="Name:" @property="name" />
             <form.element @controlType="breed" @label="Breed:" @property="breed" />
             <form.element @controlType="owner" @label="Owner:" @property="owner" />
@@ -19,6 +19,11 @@
             <form.element @controlType="meals" @label="Meals:" @helpText="(Breakfast)" @property="breakfast" />       
             <form.element @controlType="meals" @helpText="(Dinner)" @property="dinner" />
             <form.element @controlType="activities" @label="Activites:" @property="activities" />
+            <button {{action "addActivity"}}class="btn btn-secondary">Add Activity</button>
+            <button {{action "removeActivity"}}class="btn btn-secondary">Remove Activity</button>
+            <br />
+            <br />
+            <br />
             <form.submitButton @onClick={{this.save}}>Submit</form.submitButton>
         </BsForm>
     </modal.body>
