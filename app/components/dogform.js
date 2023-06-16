@@ -13,33 +13,26 @@ export default class DogFormComponent extends Component {
   description = '';
   meals = '';
   activities = '';
-  // Add more attribute variables for other dog attributes
  
   @action
   addDog(event) {
     console.log(event, this)
     event.preventDefault();
 
-    // Create a new dog object with the captured attributes
-    const newDog = this.store.createRecord('dog', new DogModel(
-       this.name,
-      this.breed,
-       this.owner,
-       this.size,
-       this.description,
-       {
-        breakfast: "acorns",
-        dinner: "kibble"
-      },
-       this.activities
+    const newDog = this.store.createRecord('dog', {
+        name: this.name,
+        breed: this.breed,
+        owner: this.owner,
+        size: this.size,
+        description: this.description,
+        meals: {
+            breakfast: "acorns",
+            dinner: "kibble"
+        },
+        activities: this.activities
 
-      // Add more attributes
-
-      // You can assign any other default values or handle data validation here
-    ))
-
-    // Add the new dog to the array
-    newDog.save();
+     
+  })
 
     // Clear the form inputs
     this.name = '';
