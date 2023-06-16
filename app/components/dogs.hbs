@@ -1,5 +1,4 @@
 <div class="dog">
-  
   <label>
     <span>What dog are you looking for?</span>
     <Input @value={{this.query}} class="light" />
@@ -7,7 +6,10 @@
   <ul class="results">
     <Dogs::Filter @dogs={{@dogs}} @query={{this.query}} as |results|>
       {{#each results as |dog|}}
-        <li><Dog @dog={{dog}} /> <button type="submit" {{on "click" (fn this.deleteDog dog)}}>Delete Dog</button></li>
+        <li><Dog @dog={{dog}} /> 
+        <button type="submit" {{on "click" (fn this.deleteDog dog)}}>Delete Dog</button>
+        <button type="submit">Edit Dog</button>
+        </li>
       {{/each}}
     </Dogs::Filter>
   </ul>
