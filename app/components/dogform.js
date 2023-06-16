@@ -20,19 +20,17 @@ export default class DogFormComponent extends Component {
     event.preventDefault();
 
     const newDog = this.store.createRecord('dog', {
-        name: this.name,
-        breed: this.breed,
-        owner: this.owner,
-        size: this.size,
-        description: this.description,
-        meals: {
-            breakfast: "acorns",
-            dinner: "kibble"
-        },
-        activities: this.activities
-
-     
-  })
+      name: this.name,
+      breed: this.breed,
+      owner: this.owner,
+      size: this.size,
+      description: this.description,
+      meals: {
+        breakfast: "acorns",
+        dinner: "kibble"
+      },
+      activities: this.activities
+    })
 
     // Clear the form inputs
     this.name = '';

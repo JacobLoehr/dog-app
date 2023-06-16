@@ -3,20 +3,26 @@
     <BsModal @open={{this.showModal}} @onSubmit={{this.submit}} @onHidden={{fn (mut this.modal3) false}} as |modal|>
     <modal.header>
         <h4 class="modal-title">
-            Custom Dialog
+            Edit Dog Properties
             <div class="badge bg-primary">2</div>
         </h4>
     </modal.header>
     <modal.body>
-        <label>
-            Search:
-            <input type="text" autofocus="autofocus">
-        </label>
+        <BsForm @model={{this}} @onSubmit={{this.submit}} as |form|>
+            <form.element @controlType="name" @label="Name" @property="name" />
+            <form.element @controlType="breed" @label="Breed" @property="breed" />
+            <form.element @controlType="owner" @label="Owner" @property="owner" />
+            <form.element @controlType="size" @label="Size" @property="size" />
+            <form.element @controlType="description" @label="Description" @property="description" />
+            <form.element @controlType="meals" @label="Meals" @property="meals" />
+            <form.element @controlType="activities" @label="Activites" @property="activities" />
+            <form.submitButton @onClick={{this.save}}>Submit</form.submitButton>
+        </BsForm>
     </modal.body>
     <modal.footer>
         <BsButton @onClick={{modal.close}}>Cancel</BsButton>
         <BsButton @type="danger">Delete</BsButton>
-        <BsButton @type="success" @onClick={{modal.submit}}>Save</BsButton>
+        <BsButton @onClick={{modal.save}}>Save</BsButton>
     </modal.footer>
     </BsModal>
 </div>

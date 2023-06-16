@@ -4,13 +4,16 @@
     <Input @value={{this.query}} class="light" />
   </label>
   <ul class="results">
-    <Dogs::Filter @dogs={{@dogs}} @query={{this.query}} as |results|>
-      {{#each results as |dog|}}
-        <li><Dog @dog={{dog}} /> 
-        <button type="submit" {{on "click" (fn this.deleteDog dog)}}>Delete Dog</button>
-        <Editdog />
+    <Dogs::Sort @dogs={{@dogs}} as |sorted|>
+      <Dogs::Filter @dogs={{sorted}} @query={{this.query}} as |results|>
+        {{#each results as |dog|}}
+        <li>
+          <Dog @dog={{dog}} />
+          <button type="submit" {{on "click" (fn this.deleteDog dog)}}>Delete Dog</button>
+          <Editdog @dog={{dog}} />
         </li>
-      {{/each}}
-    </Dogs::Filter>
+        {{/each}}
+      </Dogs::Filter>
+    </Dogs::Sort>
   </ul>
 </div>

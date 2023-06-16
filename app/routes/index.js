@@ -1,6 +1,7 @@
 import Route from '@ember/routing/route';
 import { service } from "@ember/service";
 import dogs from './dogs';
+import { action } from '@ember/object';
 
 export default class IndexRoute extends Route {
   @service store;
@@ -12,7 +13,6 @@ export default class IndexRoute extends Route {
       this.store.createRecord('dog', dog)
     }
     
-    console.log(this.store.peekAll('dog'))
-    return this.store.peekAll('dog');
+    return this.store.peekAll('dog')
   }
 }
