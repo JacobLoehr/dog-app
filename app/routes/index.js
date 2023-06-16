@@ -16,11 +16,3 @@ export default class IndexRoute extends Route {
     return this.store.peekAll('dog');
   }
 }
-
-/** 
-    console.log(dogs)
-    let response = await (await fetch('/api/dogs.json')).json()
-    for (const dog of response.data) {
-      this.store.createRecord('dog', dog)
-    }
-    */
