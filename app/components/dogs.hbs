@@ -12,9 +12,7 @@
       <Dogs::Filter @dogs={{sorted}} @query={{this.query}} as |results|>
         {{#each results as |dog|}}
         <li>
-          <Dog @dog={{dog}} />
-          <EditDog @dog={{dog}} />
-          <BsButton type="primary" @onClick={{(fn this.deleteDog dog)}}>Delete Dog</BsButton>  
+          <Dog @dog={{dog}} />       
         </li>
         {{/each}}
       </Dogs::Filter>

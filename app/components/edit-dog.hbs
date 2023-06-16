@@ -17,6 +17,7 @@
             
             <form.element @controlType="meals" @label="Meals:" @helpText="(Breakfast)" @property="breakfast" />       
             <form.element @controlType="meals" @helpText="(Dinner)" @property="dinner" />
+
             <form.element @controlType="activities" @label="Activites:" @property="activities" />
             <button {{action "addActivity"}}class="btn btn-secondary">Add Activity</button>
             <button {{action "removeActivity"}}class="btn btn-secondary">Remove Activity</button>

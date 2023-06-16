@@ -1,35 +1,19 @@
-<br />
-<br />
-<article class="dog">
-  <div class="details">
-    <h3>{{@dog.name}}</h3>
-    <div class="detail type">
-      <span>Breed:</span> {{@dog.breed}}     
-    </div>
-    <div class="detail owner">
-      <span>Owner:</span> {{@dog.owner}}
-    </div>      
-    <div class="detail location">
-      <span>Size:</span> {{@dog.size}}
-    </div>
-    <div class="detail bedrooms">
-      <span>Description:</span> {{@dog.description}}
-    </div>
-    <div class="detail bedrooms">
-      <span>Meals:</span>
-      <ul>
-        <li><span>Breakfast:</span> {{@dog.meals.breakfast}}</li>
-        <li><span>Dinner:</span> {{@dog.meals.dinner}}</li>
-      </ul>    
-    </div>
-    <div class="detail bedrooms">
-      <span>Activities:</span>
-      <ul>
-        {{#each @dog.activities as |activity|}}
-          <li>{{activity}}</li>
-        {{/each}}
-      </ul>
-    </div>
-
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{{@dog.name}}</h5>
+    <p class="card-text">
+      <strong>Breed:</strong> {{@dog.breed}}<br>
+      <strong>Owner:</strong> {{@dog.owner}}<br>
+      <strong>Size:</strong> {{@dog.size}}<br>
+      <strong>Description:</strong> {{@dog.description}}<br>
+      <strong>Meals:</strong> {{@dog.meals.breakfast}}, {{@dog.meals.dinner}}<br>
+      <strong>Activities:</strong>
+      {{#each @dog.activities as |activity|}}
+        {{activity}},
+      {{/each}}
+    </p>
+    <EditDog @dog={{this.dog}} />
+    <BsButton type="primary" @onClick={{(fn this.delete)}}>Delete</BsButton> 
   </div>
-</article>
+</div>
+
