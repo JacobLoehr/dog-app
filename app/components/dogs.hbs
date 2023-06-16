@@ -8,7 +8,7 @@
       {{#each results as |dog|}}
         <li><Dog @dog={{dog}} /> 
         <button type="submit" {{on "click" (fn this.deleteDog dog)}}>Delete Dog</button>
-        <button type="submit">Edit Dog</button>
+        <Editdog />
         </li>
       {{/each}}
     </Dogs::Filter>

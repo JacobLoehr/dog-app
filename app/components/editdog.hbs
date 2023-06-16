@@ -1,0 +1,22 @@
+<div>
+    <button {{action "openModal"}} class="btn btn-primary">Open Modal</button>
+    <BsModal @open={{this.showModal}} @onSubmit={{this.submit}} @onHidden={{fn (mut this.modal3) false}} as |modal|>
+    <modal.header>
+        <h4 class="modal-title">
+            Custom Dialog
+            <div class="badge bg-primary">2</div>
+        </h4>
+    </modal.header>
+    <modal.body>
+        <label>
+            Search:
+            <input type="text" autofocus="autofocus">
+        </label>
+    </modal.body>
+    <modal.footer>
+        <BsButton @onClick={{modal.close}}>Cancel</BsButton>
+        <BsButton @type="danger">Delete</BsButton>
+        <BsButton @type="success" @onClick={{modal.submit}}>Save</BsButton>
+    </modal.footer>
+    </BsModal>
+</div>
